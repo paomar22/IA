@@ -1,0 +1,35 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Resumen}{\es@scroman {i}}{section*.1}%
+\contentsline {chapter}{Agradecimientos}{\es@scroman {iii}}{section*.2}%
+\contentsline {chapter}{\numberline {1}Introducción general}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Inteligencia artificial en el ámbito financiero}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Estado del arte: caso Nosis}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Motivación}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Objetivos y alcance}{4}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Objetivos}{4}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Alcance}{4}{subsection.1.4.2}%
+\contentsline {chapter}{\numberline {2}Introducción específica}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Requerimientos asociados al desarrollo e implementación de/los modelo/s}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Requerimientos asociados al desarrollo}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Requerimientos asociados a la implementación}{7}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Modelos de inteligencia artificial utilizados}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Herramientas de software utilizadas}{9}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Espacio de trabajo: Databricks}{9}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Motor de análisis y procesamiento: Spark}{10}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Lenguaje de programación: Python}{11}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Gestión del código y versiones: GitHub}{11}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Creación del proyecto, seguimiento y registro del modelo: MLFlow}{12}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Programación de flujos: Apache Airflow}{12}{subsection.2.3.6}%
+\contentsline {chapter}{\numberline {3}Diseño e implementación}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Arquitectura del sistema completo}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Generación y tratamiento de los datos}{15}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Automatización e implementación}{15}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Ensayos y resultados}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Descripción del banco de pruebas}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Modelos probados}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Descripción de la salida}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Caso de uso}{17}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusiones}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusiones generales}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{19}{section.5.2}%
+\contentsline {chapter}{Bibliograf\'{\i }a}{21}{appendix*.12}%
