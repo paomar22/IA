@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.30)  1 NOV 2022 02:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2022.10.30)  1 NOV 2022 21:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -963,7 +963,7 @@ Package hyperref Info: Link coloring ON on input line 90.
 \@outlinefile=\write4
 \openout4 = `"Trabajo Final CEIA v1.1.out"'.
 
-<./Figures/logoFIUBA.pdf, id=139, 460.9062pt x 153.61644pt>
+<./Figures/logoFIUBA.pdf, id=147, 460.9062pt x 153.61644pt>
 File: ./Figures/logoFIUBA.pdf Graphic file (type pdf)
 <use ./Figures/logoFIUBA.pdf>
 Package pdftex.def Info: ./Figures/logoFIUBA.pdf  used on input line 90.
@@ -1069,15 +1069,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+
+1: section
+[5])
 \tf@toc=\write5
 \openout5 = `"Trabajo Final CEIA v1.1.toc"'.
 
-
-1: section
-[5] [6
-
-] (Trabajo Final CEIA v1.1.lof
+ [6] (Trabajo Final CEIA v1.1.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1087,7 +1085,9 @@ LaTeX Info: Redefining \% on input line 1.
 
 
 1: section
-[7] [8
+[7
+
+] [8
 
 ] (Trabajo Final CEIA v1.1.lot
 LaTeX Info: Redefining \sptext on input line 1.
@@ -1111,7 +1111,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 34.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 34.
-<./Figures/Figura3.png, id=252, 489.5088pt x 340.6326pt>
+<./Figures/Figura3.png, id=266, 489.5088pt x 340.6326pt>
 File: ./Figures/Figura3.png Graphic file (type png)
 <use ./Figures/Figura3.png>
 Package pdftex.def Info: ./Figures/Figura3.png  used on input line 39.
@@ -1136,7 +1136,7 @@ been already used, duplicate ignored
                    \relax 
 l.69 
       [2 <./Figures/Figura3.png>]
-<./Figures/Figura2.png, id=266, 841.2228pt x 251.4996pt>
+<./Figures/Figura2.png, id=280, 841.2228pt x 251.4996pt>
 File: ./Figures/Figura2.png Graphic file (type png)
 <use ./Figures/Figura2.png>
 Package pdftex.def Info: ./Figures/Figura2.png  used on input line 75.
@@ -1144,14 +1144,14 @@ Package pdftex.def Info: ./Figures/Figura2.png  used on input line 75.
 LaTeX Info: Redefining \. on input line 106.
 LaTeX Info: Redefining \% on input line 106.
  [3 <./Figures/Figura2.png>]
-<./Figures/Diagrama de FlujoV2.png, id=273, 779.5524pt x 145.9854pt>
+<./Figures/Diagrama de FlujoV2.png, id=287, 779.5524pt x 145.9854pt>
 File: ./Figures/Diagrama de FlujoV2.png Graphic file (type png)
 <use ./Figures/Diagrama de FlujoV2.png>
 Package pdftex.def Info: ./Figures/Diagrama de FlujoV2.png  used on input line 
 112.
 (pdftex.def)             Requested size: 389.80269pt x 72.99919pt.
-LaTeX Info: Redefining \. on input line 154.
-LaTeX Info: Redefining \% on input line 154.
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
  [4 <./Figures/Diagrama de FlujoV2.png>])
 LaTeX Info: Redefining \. on input line 156.
 LaTeX Info: Redefining \% on input line 156.
@@ -1171,7 +1171,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 44.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 44.
-<./Figures/funcionlog.png, id=305, 342.33157pt x 198.55232pt>
+<./Figures/funcionlog.png, id=319, 342.33157pt x 198.55232pt>
 File: ./Figures/funcionlog.png Graphic file (type png)
 <use ./Figures/funcionlog.png>
 Package pdftex.def Info: ./Figures/funcionlog.png  used on input line 54.
@@ -1179,7 +1179,7 @@ Package pdftex.def Info: ./Figures/funcionlog.png  used on input line 54.
 LaTeX Info: Redefining \. on input line 74.
 LaTeX Info: Redefining \% on input line 74.
  [8 <./Figures/funcionlog.png>]
-<./Figures/databricks.png, id=319, 331.68126pt x 373.52179pt>
+<./Figures/databricks.png, id=333, 331.68126pt x 373.52179pt>
 File: ./Figures/databricks.png Graphic file (type png)
 <use ./Figures/databricks.png>
 Package pdftex.def Info: ./Figures/databricks.png  used on input line 78.
@@ -1213,17 +1213,72 @@ LaTeX Info: Redefining \% on input line 157.
 
 ]
 Cap\'{\i }tulo 3.
-<./Figures/arqcompleta.png, id=378, 1459.70343pt x 757.32938pt>
+1: section
+[15]
+<./Figures/arqcompleta.png, id=399, 960.7092pt x 544.434pt>
 File: ./Figures/arqcompleta.png Graphic file (type png)
 <use ./Figures/arqcompleta.png>
-Package pdftex.def Info: ./Figures/arqcompleta.png  used on input line 49.
-(pdftex.def)             Requested size: 389.80269pt x 202.23982pt.
+Package pdftex.def Info: ./Figures/arqcompleta.png  used on input line 70.
+(pdftex.def)             Requested size: 428.78532pt x 242.99095pt.
+
+Overfull \hbox (38.98264pt too wide) in paragraph at lines 70--71
+ [][] 
+ []
+
+<./Figures/LE.png, id=401, 899.5206pt x 153.6942pt>
+File: ./Figures/LE.png Graphic file (type png)
+<use ./Figures/LE.png>
+Package pdftex.def Info: ./Figures/LE.png  used on input line 88.
+(pdftex.def)             Requested size: 389.80269pt x 66.60313pt.
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
+[16 <./Figures/arqcompleta.png>]
+<./Figures/LE1.png, id=408, 502.12593pt x 243.91125pt>
+File: ./Figures/LE1.png Graphic file (type png)
+<use ./Figures/LE1.png>
+Package pdftex.def Info: ./Figures/LE1.png  used on input line 99.
+(pdftex.def)             Requested size: 389.80269pt x 189.36049pt.
+
+Overfull \hbox (113.93921pt too wide) in paragraph at lines 114--118
+\T1/ppl/m/n/10.95 --header 'Autho-ri-za-tion: Bea-rer edfcbb1a61180cfa67ae27a09
+d792bb3c64d32d1f2dde001a4cc09a7cf4b1d66' 
+ []
+
+LaTeX Info: Redefining \. on input line 125.
+LaTeX Info: Redefining \% on input line 125.
+[17 <./Figures/LE.png> <./Figures/LE1.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
+25.
+
+(C:\Users\paomaris\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )
-1: section
-[15 <./Figures/arqcompleta.png>]
+Overfull \hbox (12.046pt too wide) in paragraph at lines 138--141
+[]\T1/ppl/m/n/10.95 Endpoint GET https://app.webdoxclm.com/api/v2/documents/<ID
+>/download
+ []
+
+
+Overfull \hbox (282.1386pt too wide) in paragraph at lines 138--141
+\T1/ppl/m/n/10.95 Co-man-do: curl --location --request GET 'https://app.webdoxc
+lm.com/api/v2/documents/c2fa25ce9e7a46a9838cdedfd8912ad0/download'
+ []
+
+
+Overfull \hbox (113.93921pt too wide) in paragraph at lines 138--141
+\T1/ppl/m/n/10.95 --header 'Autho-ri-za-tion: Bea-rer edfcbb1a61180cfa67ae27a09
+d792bb3c64d32d1f2dde001a4cc09a7cf4b1d66' 
+ []
+
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+[18])
+LaTeX Info: Redefining \. on input line 158.
+LaTeX Info: Redefining \% on input line 158.
+ [19]
 \openout2 = `Chapters/Chapter4.aux'.
 
- (Chapters/Chapter4.tex [16
+ (Chapters/Chapter4.tex [20
 
 
 
@@ -1232,10 +1287,10 @@ Package pdftex.def Info: ./Figures/arqcompleta.png  used on input line 49.
 Cap\'{\i }tulo 4.
 )
 1: section
-[17]
+[21]
 \openout2 = `Chapters/Chapter5.aux'.
 
- (Chapters/Chapter5.tex [18
+ (Chapters/Chapter5.tex [22
 
 
 
@@ -1244,13 +1299,13 @@ Cap\'{\i }tulo 4.
 Cap\'{\i }tulo 5.
 )
 1: section
-[19] [20
+[23] [24
 
 
 
 ]
 1: section
-[21] (Trabajo Final CEIA v1.1.aux
+[25] (Trabajo Final CEIA v1.1.aux
 LaTeX Info: Redefining \sptext on input line 26.
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
@@ -1260,9 +1315,12 @@ LaTeX Info: Redefining \% on input line 26.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `"Trabajo Final CEIA v1.1".out' has not chang
 ed.
-(rerunfilecheck)             Checksum: F2B6B1DA303A31A1E27C10223B2EBADD;2545.
+(rerunfilecheck)             Checksum: 9C09623157815764B9640434FF8B058C;2736.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                "Trabajo Final CEIA v1.1"
@@ -1273,13 +1331,13 @@ Package logreq Info: Writing requests to '"Trabajo Final CEIA v1.1".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31231 strings out of 475385
- 674081 string characters out of 2775490
+ 31317 strings out of 475385
+ 675445 string characters out of 2775490
  1429815 words of memory out of 3000000
- 52093 multiletter control sequences out of 15000+600000
- 520872 words of font info for 101 fonts, out of 8000000 for 9000
+ 52149 multiletter control sequences out of 15000+600000
+ 523022 words of font info for 105 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 96i,20n,93p,1984b,2429s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 96i,20n,93p,1984b,2691s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/paomaris/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 <C:/Users/paomaris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmmi10.pfb><C:/Users/paomaris/AppData/Local/Programs/MiKTeX/fonts/type1/public
@@ -1295,9 +1353,9 @@ o/uplbi8a.pfb><C:/Users/paomaris/AppData/Local/Programs/MiKTeX/fonts/type1/urw/
 palatino/uplr8a.pfb><C:/Users/paomaris/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/palatino/uplr8a.pfb><C:/Users/paomaris/AppData/Local/Programs/MiKTeX/font
 s/type1/urw/palatino/uplri8a.pfb>
-Output written on "Trabajo Final CEIA v1.1.pdf" (33 pages, 1133322 bytes).
+Output written on "Trabajo Final CEIA v1.1.pdf" (37 pages, 1277992 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 308 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 544 PDF objects out of 1000 (max. 8388607)
+ 141 named destinations out of 1000 (max. 500000)
+ 334 words of extra memory for PDF output out of 10000 (max. 10000000)
 

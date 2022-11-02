@@ -38,24 +38,150 @@
   morecomment=[s]{/*}{*/}
 }
 
+En este capítulo se detalla el diseño de la arquitectura del sistema en todos sus componentes. Se menciona el motivo de la elección de cada caso y la implementación correspondiente.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-\section{Arquitectura del sistema completo}
+\section{Arquitectura del sistema completo} \label{sec:Arq}
+
+El presente trabajo supuso innovar con la utilización del aprendizaje automático a partir de la implementación de un procedimiento automatizado para la predicción de deuda/mora y la
+rotación del crédito. De cara al objetivo y al alcance planteado, luego de realizar el entendimiento del proceso de asignación manual de crédito y acordar cuáles serían los resultados esperados a partir de la implementación de la solución, se procedió con el entendimiento de las fuentes de datos (tanto internas como externas) que se detallan a continuación:
+\begin{enumerate}
+
+\item Truck: es el sistema transaccional de la compañía. Está compuesto por varios módulos.... bla bla bla. A partir de esta fuente origen fueron generados los siguientes modelos dimensionales mediante un conjunto de técnicas de diseño de bases de datos:
+	\begin{itemize}
+	\item dimensión clientes- contiene las variables principales del cliente como ser su código, región, categoría, fecha de alta, entre otros. 
+	\item modelo de deuda- contiene el detalle del historial de deuda a nivel de cliente y mes, el atraso (si es que hubiere), el origen de la deuda, entre otros.
+	\item modelo de ventas- contiene el detalle del historial de ventas a nivel cliente y mes, volumen, importe, segmento, entre otros.
+	\item modelo de crédito- contiene el historial de crédito otorgado a nivel cliente y mes, la forma de pago, el plazo de pago, entre otras variables.
+	\end{itemize}
+\item Webdox- Garantías: es un software de terceros de gestión eficiente de contratos, donde se guarda la información de las garantías de los clientes de la compañía, como por ejemplo: la fecha de contrato, fecha de expiración, tipo de garantía, monto de la garantía, entre otros. La importancia de contar con esta información dentro del \textit{datalake} radica en una restricción impuesta por el área usuaria que indica que cualquier cliente al que se le otorgue un crédito tiene que tener una garantía vigente y su crédito no puede superar en un gran porcentaje a su garantía.
+\item \textit{Last estimate}: este término se utiliza para definir la estimación más reciente comunicada o aprobada de los resultados financieros, especialmente relacionados con las ventas. El área de \textit{revenue} lo genera todos los meses durante los primeros días hábiles y para lo que resta del año en formato .xls.
+\end{enumerate}
+
+Conforme fue avanzando el entendimiento, se detectó que algunos modelos ya estaban creados y otros no. Esto requirió realizar un trabajo de integración de fuentes tanto internas como externas, el modelado de las tablas y la generación de métricas, focalizando el esfuerzo el ingeniería de datos. 
+
+En la figura \ref{fig:arqcompleta} se puede apreciar un diagrama de la arquitectura de la solución en su totalidad:
+
 \vspace{1cm}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=1.0\textwidth]{./Figures/arqcompleta.png}
-	\caption{Arquitectura completa.}
+	\includegraphics[width=1.1\textwidth]{./Figures/arqcompleta.png}
+	\caption{Arquitectura general de la solución.}
 	\label{fig:arqcompleta}
 \end{figure}
 \vspace{1cm}
 
 
+\subsection{Integración de fuente interna: \textit{Last estimate}}
+Tal como se comentó en la sección \ref{sec:Arq}, este documento de trabajo es generado por el área de \textit{revenue} de forma mensual y durante los primeros días hábiles del mes.
+El objetivo de integración de esta fuente repercutía en la necesidad de no contar con archivos de generación manual dentro de/los código/s de los modelos de aprendizaje automático, si no tener una única fuente de información que es el \textit{datalake}. 
+Para cumplir con el objetivo anteriormente planteado, se trabajó en conjunto con el área de arquitectura y se definió el flujo para la integración de esa información a la base de datos del \textit{datalake}. 
+Si bien el proceso propio de generación del archivo no fue posible automatizarlo, se realizó un desarrollo que tome el archivo desde un sistema de archivos alojado en un servidor dedicado a ello y se cargue la información en el \textit{datalake}. 
+
+A continuación, se especifica la arquitectura planteada:
+
+\vspace{1cm}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./Figures/LE.png}
+	\caption{Flujo de integración archivo \textit{Last Estimate}}
+	\label{fig:LE}
+\end{figure}
+\vspace{1cm}
+
+A continuación se realiza una consulta a la base de datos de esta fuente:
+
+\vspace{1cm}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./Figures/LE1.png}
+	\caption{Consulta realizada a la base de datos posterior a la integración}
+	\label{fig:LE1}
+\end{figure}
+\vspace{1cm}
+
+
+
+\subsection{Integración de fuente externa: Webdox}
+La integración con este software de terceros se realizó mediante una conexión a la API REST del proveedor (interfaz que permite conectar 2 componentes de software). 
+El primer paso de cara a la conexión fue solicitar una cuenta a los dueños de la plataforma, generándose un usuario y contraseña como credenciales para poder realizar las pruebas de conexión. 
+Una vez que se generó el usuario, fue necesario crear un \textit{endpoint} para proporcionar el punto de entrada a la información almacenada en Webdox. 
+
+
+
+Este endpoint recupera todos los documentos que el usuario puede ver por filtros:
+Endpoint GET https://app.webdoxclm.com/api/v2/documents
+Comando: curl --location --request GET 'https://app.webdoxclm.com/api/v2/documents' \
+--header 'Authorization: Bearer edfcbb1a61180cfa67ae27a09d792bb3c64d32d1f2dde001a4cc09a7cf4b1d66'
+
+Devuelve un JSON estructurado de la siguiente manera:
+\begin{lstlisting}
+[
+    {
+        "id": "c2fa25ce9e7a46a9838cdedfd8912ad0",
+        "name": "verPdf.pdf",
+        "created_at": "2021-03-05T18:44:24.425-03:00",
+        "updated_at": "2021-03-05T18:44:25.457-03:00",
+        "document_end_date": null,
+        "modified_at": "2021-03-05T18:44:24.481-03:00"
+    }
+]
+\end{lstlisting}
+
+
+
+
+Devuelve el archivo de documento especificado como archivo o json según el tipo de contenido
+
+Endpoint GET https://app.webdoxclm.com/api/v2/documents/<ID>/download
+Comando: curl --location --request GET 'https://app.webdoxclm.com/api/v2/documents/c2fa25ce9e7a46a9838cdedfd8912ad0/download' \
+--header 'Authorization: Bearer edfcbb1a61180cfa67ae27a09d792bb3c64d32d1f2dde001a4cc09a7cf4b1d66'
+
+Devuelve un JSON estructurado de la siguiente manera:
+
+
+
+
+
+
 
 
 \section{Generación y tratamiento de los datos}
+Ya habiendo contado con toda la información necesaria dentro del \textit{datalake}, y una vez realizado un estudio sobre las principales variables que debían ser parte del código del algoritmo, se procedió a generar a partir de los modelos y de las fuentes internas y externas integradas, un único set de datos que se detalla a continuación:
+\begin{itemize}
+\item código de cliente madre 
+\item nombre del cliente  
+\item categoría cliente 
+\item canal id 
+\item canal descripción 
+\item sub canal id 
+\item sub canal descripción 
+\item región id 
+\item región desc 
+\item fecha de alta 
+\item antigüedad en meses
+\item \textit{flag} crédito - indica si tiene o no crédito 
+\item limite a fin de mes 
+\item plazo a fin de mes 
+\item monto de ventas totales
+\item monto de ventas contado
+\item monto de ventas a crédito
+\item cantidad de ventas al contado 
+\item cantidad de ventas a crédito
+\item cantidad de ventas totales
+\item cantidad sucursales con venta: cantidad de clientes hijos con ventas en el mes
+\item monto deuda total
+\item monto deuda sin mora 
+\item monto deuda en mora
+\item máximo días de atraso: máxima cantidad de días de atraso 
+\item año y mes: mes de corte de la información
+\item fecha de cierre: día, mes y año de corte de la información 
+\end{itemize}
+
+
+
 \section{Automatización e implementación}
 
 
